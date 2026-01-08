@@ -19,7 +19,7 @@ const Header = () => {
   };
 
   return (
-    <header className='bg-black text-white  py-6 border-b fixed w-full z-10 border-b-gray-700'>
+    <header className='bg-black text-white  py-6 border-b fixed w-full z-50 border-b-gray-700'>
       <div className='flex items-center justify-between w-[90%] mx-auto'>
 
         {/* Center - Location and Time */}
