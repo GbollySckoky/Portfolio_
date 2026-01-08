@@ -6,7 +6,7 @@ const Img = () => {
     <div className="mt-20">
         <div className="grid md:grid-cols-2 w-full gap-5">
             {images.map((image,index) => (
-                <img src={image} key={index} className='h-fit object-cover rounded-lg border w-full' />
+                <img src={image} key={index} className='h-full md:h-fit object-cover rounded-lg border w-full' />
             ))}
         </div>
     </div>
