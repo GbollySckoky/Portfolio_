@@ -11,22 +11,28 @@ const About = () => {
             <h1 className='text-5xl  md:text-7xl font-bold leading-tight'>
                 MEET GBOLAHAN 
             </h1>
-            <div className="space-y-3 mt-5">
-                <p className="md:text-[18px] font-medium font">
-                    Hi! I'm Gbolahan a Frontend Developer passionate about transforming ideas into visually captivating and user-focused digital experiences. 
-                    I take pride in crafting interfaces that don’t just look good, but feel natural to use making the web more inclusive, accessible, and enjoyable for everyone.
-                </p>
+            <div className="space-y-4 mt-5">
+  <p className="md:text-[18px] font-medium font">
+    Hi, I’m Gbolahan a Frontend Developer passionate about turning ideas into intuitive,
+    high-performing digital experiences. I focus on building interfaces that feel natural to use,
+    while remaining accessible, scalable, and easy to maintain.
+  </p>
 
-                <p className="md:text-[18px] font-medium font">
-                    I specialize in turning creative concepts into functional, high-performing products. 
-                    With a deep curiosity for emerging technologies, I’m constantly exploring new ways to push boundaries,
-                    improve user experience, and optimize performance for the modern web.
-                </p>
+  <p className="md:text-[18px] font-medium font">
+    I specialize in building modern web and mobile products using React, Next.js, TypeScript,
+    and React Native. My work spans dashboards, e-commerce platforms, booking systems,
+    and payment-enabled applications for startups and growing businesses.
+  </p>
 
-                <p className="md:text-[18px] font-medium font">
-                    When I’m not coding, I enjoy playing games and listening to music they help me relax, recharge, and spark new ideas.
-                </p>
-            </div>
+  <p className="md:text-[18px] font-medium font">
+    Beyond visuals, I care deeply about performance, clean architecture, and long-term scalability.
+    At Shaare, improving the booking flow led to a 25% increase in sales and 30% growth in active users.
+  </p>
+
+  <p className="md:text-[18px] font-medium font">
+    When I’m not coding, I enjoy playing games, seeing movies and listening to music.
+  </p>
+</div>
             <Img />
             <Skills />
             <Interest />
