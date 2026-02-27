@@ -8,6 +8,13 @@ import digicon from '../../assets/Screenshot 2025-03-01 at 20.42.54 (1).png'
 import tmr from '../../assets/Screenshot 2025-11-02 at 14.42.17.png'
 import doctorImage from '../../assets/Screenshot 2026-02-26 at 21.02.23.png'
 import hospitalImage from '../../assets/Screenshot 2026-02-27 at 00.23.31.png'
+import doctorImage2 from '../../assets/Screenshot 2026-02-27 at 03.01.52.png'
+import doctorImage3 from '../../assets/Screenshot 2026-02-27 at 03.02.00.png'
+import doctorImage4 from '../../assets/Screenshot 2026-02-27 at 03.03.11.png'
+import hospitalImage2 from '../../assets/Screenshot 2026-02-27 at 03.19.02.png'
+import hospitalImage3 from '../../assets/Screenshot 2026-02-27 at 03.19.15.png'
+import hospitalImage4 from '../../assets/Screenshot 2026-02-27 at 03.19.27.png'
+import hospitalImage5 from '../../assets/Screenshot 2026-02-27 at 03.19.37.png'
 import Navbar from '../Navbar'
 
 // TypeScript interfaces
@@ -18,6 +25,7 @@ interface Project {
   technologies: string[]
   liveLink: string
   githubLink?: string
+  images?: string[]
 }
 
 const Projects = () => {
@@ -35,6 +43,7 @@ const Projects = () => {
       ],
       technologies: ['Next.js', 'TypeScript', 'Context-API', 'Paystack API', 'Google Maps API', 'Tailwind CSS'],
       liveLink: 'https://book.getshaare.com/',
+      images: [shaare]
     },
      {
       img: hospitalImage,
@@ -47,6 +56,7 @@ const Projects = () => {
       ],
       technologies: ['Next.js', 'TypeScript', 'Context-API', 'Tailwind CSS'],
       liveLink: 'https://healthmate-admin-app.netlify.app/',
+      images: [hospitalImage, hospitalImage2, hospitalImage3, hospitalImage4, hospitalImage5]
     },
     {
       img: doctorImage,
@@ -58,6 +68,7 @@ const Projects = () => {
       ],
       technologies: ['Next.js', 'TypeScript', 'Context-API', 'Tailwind CSS'],
       liveLink: 'https://healthmaate.netlify.app/',
+       images: [doctorImage, doctorImage2, doctorImage3, doctorImage4]
     },
     {
       img: playbet,
@@ -69,6 +80,7 @@ const Projects = () => {
       ],
       technologies: ['React', 'WebSocket', 'API Integration', 'Tailwind CSS'],
       liveLink: 'https://dashboard.playbeta.co/',
+      images: [playbet]
     },
     {
       img: tmr,
@@ -80,6 +92,7 @@ const Projects = () => {
       ],
       technologies: ['Next.js', 'TypeScript', 'Zustand', 'Tailwind CSS'],
       liveLink: 'https://tmrhealthcare.com',
+      images: [tmr]
     },
     {
       img: digicon,
@@ -91,6 +104,7 @@ const Projects = () => {
       ],
       technologies: ['React', 'API Integration', 'TypeScript', 'Tailwind CSS'],
       liveLink: 'https://digiconsolutions.netlify.app/admin/',
+      images: [digicon]
     },
     {
       img: posh,
@@ -102,6 +116,7 @@ const Projects = () => {
       ],
       technologies: ['React', 'Redux', 'TypeScript', 'Tailwind CSS'],
       liveLink: 'https://e-commerce-ruddy-rho.vercel.app/',
+      images: [posh]
     },
     {
       img: flexa,
@@ -109,6 +124,7 @@ const Projects = () => {
       description: 'Flexa, your premier financial companion, is the forefront online savings and investing platform in Nigeria. Over the past years, our community has preserved and invested billions of Naira.',
       technologies: ['React', 'JavaScript'],
       liveLink: 'https://finance--psi.vercel.app/',
+      images: [flexa]
     },
     {
       img: netflix,
@@ -116,6 +132,7 @@ const Projects = () => {
       description: 'A Netflix UI clone with movie browsing and video playback capabilities, featuring the TMDB API integration.',
       technologies: ['React', 'TMDB API', 'JavaScript', 'Firebase'],
       liveLink: 'https://movie-box-seven-psi.vercel.app/',
+      images: [netflix]
     },
   ]
 
@@ -258,7 +275,16 @@ const Projects = () => {
               <h2 id='modal-title' className='text-3xl md:text-4xl font-bold text-white mb-6'>
                 {selectedProject.title}
               </h2>
-              
+             <div className="flex gap-4 overflow-x-auto w-full mb-8">
+              {selectedProject.images?.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={`${selectedProject.title} screenshot ${index + 1}`}
+                  className="h-64 w-auto object-cover rounded-lg"
+                />
+              ))}
+            </div>
               <div className='mb-8'>
                 {renderDescription(selectedProject.description)}
               </div>
