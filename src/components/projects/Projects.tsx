@@ -6,6 +6,8 @@ import posh from '../../assets/Screenshot 2025-11-02 at 10.59.24.png'
 import netflix from '../../assets/Screenshot 2025-11-02 at 10.48.52.png'
 import digicon from '../../assets/Screenshot 2025-03-01 at 20.42.54 (1).png'
 import tmr from '../../assets/Screenshot 2025-11-02 at 14.42.17.png'
+import doctorImage from '../../assets/Screenshot 2026-02-26 at 21.02.23.png'
+import hospitalImage from '../../assets/Screenshot 2026-02-27 at 00.23.31.png'
 import Navbar from '../Navbar'
 
 // TypeScript interfaces
@@ -33,6 +35,29 @@ const Projects = () => {
       ],
       technologies: ['Next.js', 'TypeScript', 'Context-API', 'Paystack API', 'Google Maps API', 'Tailwind CSS'],
       liveLink: 'https://book.getshaare.com/',
+    },
+     {
+      img: hospitalImage,
+      title: 'Healthmate - Hospital Interface ',
+      description: [
+        'HealthMate’s Hospital Interface is a centralized administrative dashboard built to help healthcare institutions efficiently manage doctors, appointments, and patient records in one secure system.',
+        'The platform  will streamlines hospital operations by providing real-time visibility into bookings, doctor availability, and payment activity, ensuring smooth coordination between medical staff and patients.',
+        'As a Frontend Developer, I focused on building a structured dashboard with intuitive navigation',
+        ['Clean administrative dashboard UI', 'Appointment monitoring and status control']
+      ],
+      technologies: ['Next.js', 'TypeScript', 'Context-API', 'Tailwind CSS'],
+      liveLink: 'https://healthmate-admin-app.netlify.app/',
+    },
+    {
+      img: doctorImage,
+      title: 'Healthmate - Doctor Interface ',
+      description: [
+        'HealthMate’s Doctor Interface is a personalized clinical dashboard designed to help healthcare professionals manage appointments, access patient records, and control their availability with ease.',
+        'The system is built to reduce administrative overhead by allowing doctors to focus on consultations while keeping scheduling and patient communication organized within a single interface.',
+        // ['Secure online payment using Paystack', 'Google Autocomplete for location input', 'Dynamic booking flow with real-time updates', 'Clean, responsive, and user-friendly interface']
+      ],
+      technologies: ['Next.js', 'TypeScript', 'Context-API', 'Tailwind CSS'],
+      liveLink: 'https://healthmaate.netlify.app/',
     },
     {
       img: playbet,
@@ -257,7 +282,7 @@ const Projects = () => {
               </div>
 
               {/* Links */}
-              <div className='flex flex-col sm:flex-row gap-4'>
+              <div className='flex flex-col sm:flex-row gap-4 mb-[100px]'>
                 <a 
                   href={selectedProject.liveLink}
                   target='_blank'
