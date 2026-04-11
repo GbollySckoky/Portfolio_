@@ -10,7 +10,7 @@ const Home = () => {
         <div className="absolute inset-0 bg-black/60"></div>
         
         {/* Content */}
-        <div className="relative z-10 flex items-center justify-center md:pt-30 pt-20 pb-40">
+        <div className="relative z-10 flex items-center justify-center md:pt-30 pt-20 pb-40 lg:pb-30">
             <div className="md:w-[60%] w-[90%] max-auto">
                 <h1 className='text-5xl md:text-7xl font-bold leading-tight'>
                     COKER-GBOLAHAN 

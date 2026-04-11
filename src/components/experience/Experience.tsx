@@ -1,5 +1,6 @@
 import experience from '../../assets/james-harrison-vpOeXr5wmR4-unsplash.jpg'
 import Navbar from '../Navbar'
+import ContactInfo from './ContactInfo'
 import ExperienceTimeline from './ExperienceTimeLine'
 
 
@@ -24,6 +25,7 @@ const Experience = () => {
         </div>
       </div>
       <ExperienceTimeline />
+      <ContactInfo />
       <Navbar />
     </div>
   )
