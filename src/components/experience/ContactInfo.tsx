@@ -1,5 +1,13 @@
+import { useEffect } from "react"
+import useGetAllContact from "../../hooks/useGetAllContact"
 
 const ContactInfo = () => {
+    const {getAllContact} = useGetAllContact()
+
+    useEffect(() => {
+        getAllContact()
+    }, [getAllContact])
+    
   return (
       <div className="max-w-7xl mx-auto px-6">
         <h1 className='text-2xl md:text-3xl font-bold leading-tight mb-6 text-center'>Contact Information</h1>
