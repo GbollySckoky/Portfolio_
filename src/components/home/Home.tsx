@@ -17,7 +17,7 @@ const Home = () => {
                 </h1>
                 <h1 className='text-5xl md:text-7xl font-bold leading-tight'>OPEYEMI</h1>
                 <p className="software-engineer-badge-animated text-base md:text-2xl font-medium mt-6 text-nowrap">
-                    Frontend Developer
+                    Software Developer
                 </p>
                 <div className="flex items-center gap-2 mt-6">
                     <svg 
