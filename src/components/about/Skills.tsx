@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 const Skills = () => {
     const skills = [
-        'Typescript', 'Javascript', 'Next.js', 'React.js', 'Svelte', 'React Native',
+        'Typescript', 'Javascript', 'Node.js', 'Nest.js', 'Next.js', 'React.js', 'Svelte', 'React Native',
          'Git', 'Github', 'HTML', 'CSS', 'TailwindCss'
     ]
   return (

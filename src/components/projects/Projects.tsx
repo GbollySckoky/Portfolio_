@@ -16,12 +16,16 @@ import hospitalImage3 from '../../assets/Screenshot 2026-02-27 at 03.19.15.png'
 import hospitalImage4 from '../../assets/Screenshot 2026-02-27 at 03.19.27.png'
 import hospitalImage5 from '../../assets/Screenshot 2026-02-27 at 03.19.37.png'
 import Navbar from '../Navbar'
+import patientImage from '../../assets/Screenshot 2026-10-24 at 08.19.14.png'
+import { Link } from 'react-router-dom'
 
 // TypeScript interfaces
+type ProjectDescription = string | (string | string[])[]
+
 interface Project {
   img: string
   title: string
-  description: string | string[] | any
+  description: ProjectDescription
   technologies: string[]
   liveLink: string
   githubLink?: string
@@ -31,7 +35,6 @@ interface Project {
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({})
-
   const projects: Project[] = [
     {
       img: shaare,
@@ -45,30 +48,93 @@ const Projects = () => {
       liveLink: 'https://book.getshaare.com/',
       images: [shaare]
     },
-     {
-      img: hospitalImage,
-      title: 'Healthmate - Hospital Interface ',
+    {
+      img: patientImage,
+      title: 'Healthmate - Patient Interface ',
       description: [
-        'HealthMate’s Hospital Interface is a centralized administrative dashboard built to help healthcare institutions efficiently manage doctors, appointments, and patient records in one secure system.',
-        'The platform  will streamlines hospital operations by providing real-time visibility into bookings, doctor availability, and payment activity, ensuring smooth coordination between medical staff and patients.',
-        'As a Frontend Developer, I focused on building a structured dashboard with intuitive navigation',
-        ['Clean administrative dashboard UI', 'Appointment monitoring and status control']
+        'HealthMate’s Patient Interface is a telemedicine platform designed to make healthcare more accessible, allowing patients to book appointments, consult doctors, and track their health in one place.',
+        'The platform simplifies access to healthcare by enabling patients to check doctor availability, schedule video, audio, or in-person consultations, receive appointment notifications, and communicate with doctors through a built-in chat system.',
+        'As a Full-Stack Developer, I focused on building a seamless patient experience, integrating appointment booking, payments, real-time communication, and health-tracking features.',
+        [
+          'Responsive and intuitive patient dashboard UI',
+          'Doctor discovery and appointment booking',
+          'Video, audio, and in-person consultations',
+          'Real-time patient-doctor messaging',
+          'Secure payment integration',
+          'Health tracking and appointment management'
+        ]
       ],
-      technologies: ['Next.js', 'TypeScript', 'Context-API', 'Tailwind CSS'],
+      technologies: ['Next.js', 'TypeScript', 'Agora', 'Paystack API', 'Tailwind CSS'],
+      liveLink: 'https://www.healthmatepatient.com/',
+      images: [patientImage]
+    }, 
+    {
+      img: hospitalImage,
+      title: 'Healthmate - Hospital Interface',
+      description: [
+        'Healthmate’s Hospital Interface is a centralized administrative platform designed to help healthcare institutions manage doctors, oversee patient appointments, monitor consultations, and coordinate hospital operations from a single dashboard.',
+
+        'The platform streamlines hospital workflows by providing visibility into doctor availability, appointment requests, consultation statuses, and payment activities. It enables hospital administrators to manage healthcare professionals and monitor patient-doctor interactions efficiently.',
+
+        'As a Frontend Developer, I focused on developing a responsive administrative dashboard, implementing intuitive navigation, integrating REST APIs, and building interactive interfaces for managing doctors, appointments, and hospital operations.',
+
+        [
+          'Responsive hospital administration dashboard',
+          'Doctor management and availability monitoring',
+          'Appointment monitoring and status tracking',
+          'Consultation and patient record oversight',
+          'Payment activity monitoring',
+          'REST API integration and dynamic data management',
+        ],
+      ],
+      technologies: [
+        'Next.js',
+        'TypeScript',
+        'Context API',
+        'Tailwind CSS',
+      ],
       liveLink: 'https://healthmate-admin-app.netlify.app/',
-      images: [hospitalImage, hospitalImage2, hospitalImage3, hospitalImage4, hospitalImage5]
+      images: [
+        hospitalImage,
+        hospitalImage2,
+        hospitalImage3,
+        hospitalImage4,
+        hospitalImage5,
+      ],
     },
     {
       img: doctorImage,
-      title: 'Healthmate - Doctor Interface ',
+      title: 'Healthmate - Doctor Interface',
       description: [
-        'HealthMate’s Doctor Interface is a personalized clinical dashboard designed to help healthcare professionals manage appointments, access patient records, and control their availability with ease.',
-        'The system is built to reduce administrative overhead by allowing doctors to focus on consultations while keeping scheduling and patient communication organized within a single interface.',
-        // ['Secure online payment using Paystack', 'Google Autocomplete for location input', 'Dynamic booking flow with real-time updates', 'Clean, responsive, and user-friendly interface']
+        'Healthmate’s Doctor Interface is a dedicated clinical dashboard designed to help healthcare professionals manage patient appointments, conduct consultations, access patient information, and communicate with patients from a centralized platform.',
+
+        'The platform simplifies clinical workflows by allowing doctors to review and approve appointment requests, manage upcoming and completed consultations, communicate with patients through real-time messaging, and conduct video, audio, or in-person consultations.',
+
+        'As a Frontend Developer, I focused on building a responsive and intuitive dashboard, integrating appointment management workflows, real-time communication, and consultation features to create a seamless experience for healthcare professionals.',
+
+        [
+          'Responsive doctor dashboard and profile management',
+          'Appointment requests, approvals, and status management',
+          'Video, audio, and in-person consultation workflows',
+          'Real-time patient-doctor messaging',
+          'Patient records and consultation history',
+          'Prescription and consultation note management',
+        ],
       ],
-      technologies: ['Next.js', 'TypeScript', 'Context-API', 'Tailwind CSS'],
-      liveLink: 'https://healthmaate.netlify.app/',
-       images: [doctorImage, doctorImage2, doctorImage3, doctorImage4]
+      technologies: [
+        'Next.js',
+        'TypeScript',
+        'Context API',
+        'Tailwind CSS',
+        'Agora'
+      ],
+      liveLink: 'https://doctor.healthmatepatient.com/',
+      images: [
+        doctorImage,
+        doctorImage2,
+        doctorImage3,
+        doctorImage4,
+      ],
     },
     {
       img: playbet,
@@ -159,7 +225,7 @@ const Projects = () => {
     setSelectedProject(null)
   }
 
-  const renderDescription = (description: string | string[] | any) => {
+  const renderDescription = (description: ProjectDescription) => {
     if (typeof description === 'string') {
       return <p className='text-gray-300 text-base leading-relaxed'>{description}</p>
     }
@@ -223,11 +289,14 @@ const Projects = () => {
               onLoad={() => setImageLoading(prev => ({ ...prev, [index]: false }))}
               onError={() => setImageLoading(prev => ({ ...prev, [index]: false }))}
             />
-            <div className='absolute inset-0 from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-8'>
-              <h3 className='text-white text-xl md:text-2xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300'>
+            <Link 
+              className='absolute inset-0 from-black/90 via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end justify-center pb-8' 
+              to={project.liveLink}
+              target='_blank'>
+              <h3 className='text-black text-xl md:text-2xl font-bold transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300'>
                 {project.title}
               </h3>
-            </div>
+            </Link>
             {/* Tech badges on hover */}
             <div className='absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
               <span className='bg-blue-600 text-white text-xs px-3 py-1 rounded-full'>

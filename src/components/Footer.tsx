@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   const socials = [
     {
-      title:'LinkedIn',
-      url:'https://www.linkedin.com/in/gbolahancoker/'
-    },
-    {
       title:'Whatsapp',
-      url:''
-    },
-    {
-      title:'Github',
-      url:'https://github.com/GbollySckoky'
+      url:'#'
     },
     {
       title:'Twitter',
       url:'https://x.com/Sckokyy'
+    },
+    {
+      title:'LinkedIn',
+      url:'https://www.linkedin.com/in/gbolahancoker/'
+    },
+    {
+      title:'Github',
+      url:'https://github.com/GbollySckoky'
     },
   ]
   

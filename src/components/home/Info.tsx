@@ -1,10 +1,28 @@
 
 const Info = () => {
     return (
-      <div className='mt-8 space-y-3'>
-          <p className='font font-medium md:text-xl text-base'> Welcome to my portfolio exhibition a space where I share my journey as a problem-solver and creator.</p>
-          <p className='font font-medium text-base md:text-xl'> Here, you’ll discover how I approach real-world challenges through code, read testimonials from clients I’ve collaborated with, and explore a gallery of projects that reflect my growth and creativity. </p>
-          <p className='font font-medium md:text-xl text-base'> I’ve always viewed Frontend Development as the perfect blend of logic and artistry,it's a way to engineer digital experiences that are both intuitive and impactful. This exhibition is my way of turning that belief into something tangible.</p>
+      <div className="mt-8 space-y-3">
+        <p className="font font-medium text-base md:text-xl">
+          Welcome to my portfolio exhibition, a space where I share my
+          journey as a Software Developer, problem-solver, and creator.
+        </p>
+
+        <p className="font font-medium text-base md:text-xl">
+          Here, you'll discover how I approach real-world challenges
+          through software engineering, explore projects I've built,
+          and read testimonials from people I've collaborated with.
+          Each project reflects my growth, technical decisions, and
+          commitment to building meaningful solutions.
+        </p>
+
+        <p className="font font-medium text-base md:text-xl">
+          I've always viewed software development as more than just
+          writing code. It's about understanding problems, designing
+          thoughtful solutions, and building reliable, intuitive
+          applications that create real value. This exhibition is
+          a reflection of that philosophy and the journey behind
+          everything I build.
+        </p>
       </div>
     )
   }
