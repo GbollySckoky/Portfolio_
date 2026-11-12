@@ -17,6 +17,7 @@ import hospitalImage4 from '../../assets/Screenshot 2026-02-27 at 03.19.27.png'
 import hospitalImage5 from '../../assets/Screenshot 2026-02-27 at 03.19.37.png'
 import Navbar from '../Navbar'
 import patientImage from '../../assets/Screenshot 2026-10-24 at 08.19.14.png'
+import mi18 from '../../assets/Screenshot 2026-11-12 at 15.53.03.png'
 import { Link } from 'react-router-dom'
 
 // TypeScript interfaces
@@ -36,6 +37,31 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [imageLoading, setImageLoading] = useState<{ [key: number]: boolean }>({})
   const projects: Project[] = [
+    {
+      img: mi18,
+      title: 'MI86',
+      description: [
+        'MI86 (MadeIn86) is a modern business technology consultancy website designed to help organizations improve operational efficiency through workflow automation, systems integration, business intelligence, and practical AI solutions. The platform showcases the company’s services, expertise, and solutions through a professional, responsive, and engaging digital experience.',
+
+        'As a Frontend Developer, I contributed to building a modern, responsive interface that communicates the company’s services and value proposition. The website features interactive service sections, an operational readiness assessment, an ROI calculator, resource pages, and clear navigation designed to improve user engagement and encourage potential clients to explore the company’s solutions.',
+
+        [
+          'Modern, responsive, and user-friendly interface',
+          'Interactive operational readiness assessment',
+          'ROI calculator for evaluating potential business value',
+          'Dynamic service sections and engaging UI components',
+          'Resources and business insights section',
+          'Optimized navigation and clear calls to action'
+        ]
+      ],
+      technologies: [
+        'Next.js',
+        'TypeScript',
+        'Tailwind CSS'
+      ],
+      liveLink: 'https://miscellaneous-mi86-website-hxtzgb-b90d36-178-104-15-202.sslip.io/',
+      images: [mi18]
+    },
     {
       img: shaare,
       title: 'Shaare',
